@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: consumer
+  rabbitmq:
+    host: localhost # rabbitMQ的ip地址
+    port: 5672 # 端口
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      simple:
+        prefetch: 1 #每次只能取一个，消费完才能拿下一个消息，默认消息预取为平均分
