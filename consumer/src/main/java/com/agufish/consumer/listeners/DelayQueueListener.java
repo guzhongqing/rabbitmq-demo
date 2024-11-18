@@ -34,10 +34,9 @@ public class DelayQueueListener {
 
 
     @RabbitListener(queues = "dlx_queue")
-    public void dlxListener(String message) throws InterruptedException {
-        log.info("日志");
-        System.out.println("dlx queue Received <" + message + ">");
-        System.out.println("队列的消费确认机制：" + getAcknowledgeModeForQueue("dlx_queue"));
+    public void dlxListener(String message) {
+        log.info("模拟延迟队列操作的dlx_queue receiveMessage message = {}", message);
+        System.out.println("模拟延迟队列中死信队列的消费确认机制：" + getAcknowledgeModeForQueue("dlx_queue"));
     }
 
 

@@ -85,6 +85,14 @@ class ProducerApplicationTests {
         rabbitTemplate.convertAndSend("delay_exchange", "delay", "从延迟队列发到死信队列的消息");
     }
 
+    @Test
+    public void manualProducer() {
+        for (int i = 0; i < 10; i++) {
+            rabbitTemplate.convertAndSend("delay_exchange", "delay", "从延迟队列发到死信队列的消息");
+
+        }
+    }
+
 
 }
 
