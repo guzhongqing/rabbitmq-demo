@@ -73,7 +73,16 @@ class ProducerApplicationTests {
 
         String queueName = "object queue";
         rabbitTemplate.convertAndSend(queueName, map);
+    }
 
+
+    @Test
+    public void delayProducer() {
+        // 这对象转发到死信队列序列化有问题
+//        HashMap<String, String> map = new HashMap<>();
+//        map.put("name", "jack");
+//        map.put("age", "24");
+        rabbitTemplate.convertAndSend("delay_exchange", "delay", "从延迟队列发到死信队列的消息");
     }
 
 

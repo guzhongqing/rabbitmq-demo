@@ -6,11 +6,12 @@ import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component
+
+// 启动组件就会监听，同时创建交换器和队列，并绑定
+//@Component
 public class MqListener {
 
     @RabbitListener(bindings = @QueueBinding(
